@@ -1,0 +1,21 @@
+<h3>TO DO 등록</h3>
+<div>
+  <form [formGroup]="todoRegiterFormModel" (ngSubmit)="registerTodo()">
+    <div>
+      <input type="text" formControlName="todoName" placeholder="할일"/>
+      <span [style.color]="'red'" [hidden]="!todoRegiterFormModel.hasError('required', 'todoName')">
+        TodoName is required.
+      </span>
+    </div>
+    <div>
+      <input type="date" formControlName="todoDate"/>
+      <span [style.color]="'red'" [hidden]="!todoRegiterFormModel.hasError('required', 'todoDate')">
+        TodoDate is required.
+      </span>
+    </div>
+    <div>
+      <input type="submit" value="등록"/>
+    </div>
+
+  </form>
+</div>
