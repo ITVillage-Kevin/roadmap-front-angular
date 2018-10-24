@@ -19,7 +19,10 @@ export class TodoRegisterComponent implements OnInit {
 
   registerTodo() {
     if (this.todoRegiterFormModel.valid) {
-      this.todoService.registerTodo(this.todoRegiterFormModel.value);
+      this.todoService.registerTodo(this.todoRegiterFormModel.value)
+        .subscribe(result => {
+          this.todoService.registerTodoEvent.emit(result);
+        });
     }
   }
 }

@@ -4,9 +4,11 @@ import {TodoListComponent} from './todo-list/todo-list.component';
 import {TodoComponent} from './todo.component';
 import {TodoService} from '../todo.service';
 import {ReactiveFormsModule} from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
 
 @NgModule({
   imports: [
+    BrowserModule,
     ReactiveFormsModule
   ],
   declarations: [
