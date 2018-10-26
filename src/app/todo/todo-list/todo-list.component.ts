@@ -7,7 +7,7 @@ import {TodoService} from '../../todo.service';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  todoData: Array<object> = [];
+  todoData: Array<any> = [];
   constructor(private todoService: TodoService) {
     this.todoService.registerTodoEvent.subscribe(data => {
       console.log(data);
@@ -17,6 +17,10 @@ export class TodoListComponent implements OnInit {
 
 
   ngOnInit() {
+    this.todoService.getTodos().subscribe(datas => {
+      console.log(datas);
+      this.todoData = datas;
+    });
   }
 
 }

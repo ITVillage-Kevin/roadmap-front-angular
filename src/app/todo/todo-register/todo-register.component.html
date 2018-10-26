@@ -1,21 +1,30 @@
-<h3>TO DO 등록</h3>
 <div>
-  <form [formGroup]="todoRegiterFormModel" (ngSubmit)="registerTodo()">
-    <div>
-      <input type="text" formControlName="todoName" placeholder="할일"/>
-      <span [style.color]="'red'" [hidden]="!todoRegiterFormModel.hasError('required', 'todoName')">
-        TodoName is required.
-      </span>
+  <div class="flex-row">
+    <div class="col-lg-12">
+      <h3>TO DO 등록</h3>
     </div>
-    <div>
-      <input type="date" formControlName="todoDate"/>
-      <span [style.color]="'red'" [hidden]="!todoRegiterFormModel.hasError('required', 'todoDate')">
-        TodoDate is required.
-      </span>
+  </div>
+  <div class="flex-row">
+    <div class="col-lg-12">
+      <form [formGroup]="todoRegiterFormModel" (ngSubmit)="registerTodo()">
+        <div class="flex-row form-control-plaintext">
+          <input type="text" formControlName="todoName" placeholder="할일"/>
+          <span [style.color]="'red'" [hidden]="!todoRegiterFormModel.hasError('required', 'todoName')">
+            TodoName is required.
+          </span>
+        </div>
+        <div class="flex-row">
+          <input type="date" formControlName="todoDate"/>
+          <span [style.color]="'red'" [hidden]="!todoRegiterFormModel.hasError('required', 'todoDate')">
+            TodoDate is required.
+          </span>
+        </div>
+        <div class="flex-row">
+          <div class="col-lg-3 text-right" style="margin-top: 1em">
+            <input type="submit" value="등 록" class="btn btn-block btn-success"/>
+          </div>
+        </div>
+      </form>
     </div>
-    <div>
-      <input type="submit" value="등록"/>
-    </div>
-
-  </form>
+  </div>
 </div>
